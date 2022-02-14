@@ -17,6 +17,7 @@ document.getElementById('deposite-button').addEventListener('click',function()
     
  
 /* update balance */
+
 const balanceTotal =document.getElementById ('balance-total');
 const balanceAmountValue = balanceTotal.innerText;
 const previousBalanceTotal =  parseFloat(balanceAmountValue);
@@ -25,8 +26,12 @@ balanceTotal.innerText = previousBalanceTotal + depositAmount;
   
 
     depositInput.value=''; 
+
 })
-/* 
+
+// Money withdraw and reduce balance for withdraw
+
+
 document.getElementById('withdraw-button').addEventListener('click',function(){
     const withdrawInput = document.getElementById('withdraw-input');
     const withdrawAmountValue = withdrawInput.value ;
@@ -38,6 +43,15 @@ document.getElementById('withdraw-button').addEventListener('click',function(){
 
     withdrawTotal.innerText = previouswithdrawTotal + withdrawAmount;
 
+    // update balance after withdraw
+
+
+    const balanceTotal =document.getElementById ('balance-total');
+    const balanceAmountValue = balanceTotal.innerText;
+    const previousBalanceTotal =  parseFloat(balanceAmountValue);
+    
+    balanceTotal.innerText = previousBalanceTotal - withdrawAmount;
+
     withdrawInput.value = '';
     
-}) */
+})
